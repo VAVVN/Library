@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="container">
+    <header class="app-header" role="banner"> <!-- Top bar: search on the left, user/notifications on the right -->
+        <div class="top-bar">
+            <form class="search" role="search" aria-label="Site Search"> <label for="header-search"
+                    class="visually-hidden"></label>
+                <div class="search-input"> <span class="icon" aria-hidden="true">🔍</span> <input id="header-search"
+                        name="q" type="search" placeholder="" autocomplete="off" /> </div>
+            </form>
+            <div class="top-actions"> <button class="icon-btn" type="button" aria-label="Notifications"> <span
+                        class="icon" aria-hidden="true">🔔</span> </button> <button class="user-btn" type="button"
+                    aria-label="Account menu">
+                    <img class="avatar" src="avatar-cat.png" alt="Morgan Oakley avatar" width="32" height="32" /> <span
+                        class="user-name"
+                        style="color : white; font-weight: 700; font-size: medium; font-family: 'Courier New', Courier, monospace;">Vuvuzela</span>
+                </button> </div>
+        </div> <!-- Greeting and primary actions -->
+        <div class="hero">
+            <div class="greeting"> <img class="avatar-large" src="avatar-cat.png" alt="Morgan Oakley avatar" width="48"
+                    height="48" />
+                <div class="greeting-text">
+                    <h2 class="title">Vuvuzela <span class="handle">(@Vuvuzela)</span></h2>
+                </div>
+            </div>
+            <nav class="primary-actions" aria-label="Primary actions"> <button class="action-btn primary"
+                    type="button">New</button> <button class="action-btn" type="button">Upload</button> <button
+                    class="action-btn" type="button">Share</button> </nav>
+    </header>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-table-cells"></i>
+            <span>Dashboard</span>
+        </div>
+
+        <nav>
+            <a href="#" class="item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <br>
+            <a href="#" class="item">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Profile</span>
+            </a>
+            <br>
+
+            <a href="#" class="item">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+            </a>
+            <br>
+            <a href="#" class="item">
+                <i class="fa-solid fa-clock"></i>
+                <span>History</span>
+            </a>
+            <br>
+            <a href="#" class="item">
+                <i class="fa-solid fa-file"></i>
+                <span>Tasks</span>
+            </a>
+            <br>
+            <a href="#" class="item">
+                <i class="fa-solid fa-users"></i>
+                <span>Communities</span>
+            </a>
+            <br>
+            <div class="spacer"></div>
+
+            <a href="#" class="item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+            <br>
+
+            <a href="#" class="item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Support</span>
+            </a>
+            <br>
+            <a href="#" class="item">
+                <i class="fa-solid fa-shield"></i>
+                <span>Privacy</span>
+            </a>
+        </nav>
+    </aside>
+    <main class="dashboard"> <!-- Your books Section -->
+        <section class="books">
+            <h2>Your Books </h2>
+            <Button id="NewBookButton">New book </Button>
+            <br>
+            <br>
+            <div id="formContainer"></div>
+            <br>
+            <div class="book-list">
+                <!-- <article class="book-card">
+                <h3>Book 1</h3>
+                <p>Sed tempus ut lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan
+                    nec.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Book 2</h3>
+                <p>Nullam condimentum ipsum ut lectus vehicula consectetur. Quisque sed dolor tincidunt, consectetur
+                    sapien et, facilisis dolor. Duis sem purus, dignissim ut sapien in, varius pellentesque lacus.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Impossible App</h3>
+                <p>In hac habitasse platea dictumst. Vivamus dictum rutrum arcu, a placerat velit sagittis id.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Easy Peasy App</h3>
+                <p>Etiam cursus eros ac efficitur fringilla. Vestibulum dignissim urna eget accumsan aliquam. Curabitur
+                    dignissim nisi in tortor commodo, ac bibendum magna tincidunt.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Ad Blocker</h3>
+                <p>Quisque eget rutrum nisl. Nam augue justo, cursus vitae metus vel, pharetra hendrerit felis. Aliquam
+                    sed malesuada eros.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Money Maker</h3>
+                <p>Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor
+                    purus sit amet ex. Pellentesque mollis nec sem vel aliquam.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Money Maker</h3>
+                <p>Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor
+                    purus sit amet ex. Pellentesque mollis nec sem vel aliquam.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Money Maker</h3>
+                <p>Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor
+                    purus sit amet ex. Pellentesque mollis nec sem vel aliquam.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Money Maker</h3>
+                <p>Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor
+                    purus sit amet ex. Pellentesque mollis nec sem vel aliquam.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Money Maker</h3>
+                <p>Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor
+                    purus sit amet ex. Pellentesque mollis nec sem vel aliquam.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article>
+            <article class="book-card">
+                <h3>Money Maker</h3>
+                <p>Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor
+                    purus sit amet ex. Pellentesque mollis nec sem vel aliquam.</p>
+                <div class="book-actions"> <button title="Favorite"><image class="icon-svg" src="star-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> <button title="View"><image class="icon-svg" src="eye-plus-outline copy.svg" alt="Home" width="29.5" height="23.5"></button>
+                    <button title="Share"><image class="icon-svg" src="share-variant-outline copy.svg" alt="Home" width="29.5" height="23.5"></button> </div>
+            </article> -->
+            </div>
+        </section> <!-- Announcements Section -->
+        <div class="announcements-trending">
+            <section class="announcements">
+                <h2>Announcements</h2>
+                <article class="announcement-item">
+                    <h3>Site Maintenance</h3>
+                    <p>Vestibulum condimentum tellus lacus, in accumsan elit maximus ac. Donec hendrerit sodales
+                        congue...
+                    </p>
+                </article>
+                <article class="announcement-item">
+                    <h3>Community Share Day</h3>
+                    <p>Nam vel lectus tincidunt, rutrum nulla eu, ornare libero. Aliquam dictum accumsan porttitor...
+                    </p>
+                </article>
+                <article class="announcement-item">
+                    <h3>Updated Privacy Policy</h3>
+                    <p>Phasellus efficitur nisi eget elit consectetur, eget condimentum ante auctor. Cras fringilla
+                        sagittis
+                        sem in mattis...</p>
+                </article>
+            </section> <!-- Trending Section -->
+            <section class="trending">
+                <h2>Trending</h2>
+                <article class="trending-item">
+                    <strong>@tegan</strong> – World Peace Builder
+                    <strong>@morgan</strong> – Super Cool book
+                    <strong>@kendall</strong> – Life Changing App
+                    <strong>@alex</strong> – No Traffic Maker
+                </article>
+            </section>
+        </div>
+    </main>
+    // ...existing code...
+    <script>
+        const myLibrary = [];
+        function Book(id, title, author, pages, read) {
+            this.id = id;
+            this.title = title;
+            this.author = author;
+            this.pages = pages;
+            this.read = read;
+        }
+
+        function addBookToLibrary(title, author, pages, read) {
+            const id = crypto.randomUUID();
+            const newBook = new Book(id, title, author, pages, read);
+            myLibrary.push(newBook);
+        }
+
+        // prepopulate
+        addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, false);
+        addBookToLibrary("1984", "George Orwell", 328, true);
+        addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
+        addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, true);
+        addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, true);
+        addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", 277, false);
+        addBookToLibrary("The Picture of Dorian Gray", "Oscar Wilde", 254, false);
+        addBookToLibrary("Brave New World", "Aldous Huxley", 268, true);
+        addBookToLibrary("The Handmaid's Tale", "Margaret Atwood", 311, true);
+
+        // render helper: clear and rebuild the .book-list from myLibrary
+        function renderBooks() {
+            const bookList = document.querySelector(".book-list");
+            bookList.innerHTML = "";
+
+            myLibrary.forEach(book => {
+                const card = document.createElement("div");
+                card.className = "book-card";
+
+                const heading = document.createElement("h3");
+                heading.textContent = book.title;
+                card.appendChild(heading);
+
+                const info = document.createElement("p");
+                info.textContent = `Author: ${book.author}, Pages: ${book.pages}, Read: ${book.read}`;
+                card.appendChild(info);
+
+                const actions = document.createElement("div");
+                actions.className = "book-actions";
+
+                const removeButton = document.createElement("button");
+                removeButton.type = "button";
+                removeButton.textContent = "Remove";
+                removeButton.addEventListener("click", () => {
+                    const idx = myLibrary.findIndex(b => b.id === book.id);
+                    if (idx > -1) {
+                        myLibrary.splice(idx, 1);
+                        renderBooks();
+                    }
+                });
+                actions.appendChild(removeButton);
+                actions.appendChild(document.createElement("br"));
+
+                //create read button to mark as read/unread
+                const readButton = document.createElement("button");
+                readButton.type = "button";
+                readButton.textContent = book.read ? "Mark as Unread" : "Mark as Read";
+                readButton.addEventListener("click", () => {
+                    book.read = !book.read;
+                    renderBooks();
+                });
+                actions.appendChild(readButton);
+
+                //create green indicator for read books
+                if (book.read) {
+                    const greenIndicator = document.createElement("span");
+                    greenIndicator.className = "green-indicator";
+                    greenIndicator.textContent = "✔";
+                    card.appendChild(greenIndicator);
+                }
+
+                card.appendChild(actions);
+                bookList.appendChild(card);
+            });
+        }
+
+        // wire New Book button -> show form
+        document.getElementById("NewBookButton").addEventListener("click", () => {
+            const formContainer = document.getElementById("formContainer");
+            formContainer.innerHTML = "";
+
+            const form = document.createElement("form");
+
+            const titleLabel = document.createElement("label");
+            titleLabel.textContent = "Title: ";
+            const titleInput = document.createElement("input");
+            titleInput.type = "text";
+            titleInput.name = "title";
+
+            const authorLabel = document.createElement("label");
+            authorLabel.textContent = "Author: ";
+            const authorInput = document.createElement("input");
+            authorInput.type = "text";
+            authorInput.name = "author";
+
+            const pagesLabel = document.createElement("label");
+            pagesLabel.textContent = "Pages: ";
+            const pagesInput = document.createElement("input");
+            pagesInput.type = "number";
+            pagesInput.name = "pages";
+
+            const readLabel = document.createElement("label");
+            readLabel.textContent = "Read: ";
+            const readInput = document.createElement("input");
+            readInput.type = "checkbox";
+            readInput.name = "read";
+
+            const submitButton = document.createElement("button");
+            submitButton.type = "submit";
+            submitButton.textContent = "Add Book";
+
+            form.appendChild(titleLabel);
+            form.appendChild(titleInput);
+            form.appendChild(document.createElement("br"));
+
+            form.appendChild(authorLabel);
+            form.appendChild(authorInput);
+            form.appendChild(document.createElement("br"));
+
+            form.appendChild(pagesLabel);
+            form.appendChild(pagesInput);
+            form.appendChild(document.createElement("br"));
+
+            form.appendChild(readLabel);
+            form.appendChild(readInput);
+            form.appendChild(document.createElement("br"));
+
+            form.appendChild(submitButton);
+            formContainer.appendChild(form);
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.checked);
+                renderBooks();
+                formContainer.innerHTML = "";
+            });
+        });
+
+        // initial render
+        renderBooks();
+    </script>
+</body>
+
+</html>

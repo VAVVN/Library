@@ -1,0 +1,280 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar body";
+    grid-template-columns: 200px 1fr; /* sidebar rộng 200px, body chiếm phần còn lại */
+    grid-template-rows: 130px auto;    /* header cao 240px */
+    height: auto;
+}
+
+header {
+    display: grid;                        /* make header a grid container */
+    grid-template-areas: 
+        "top-bar"
+        "hero";
+    grid-template-rows: 1fr 1fr; /* top-bar , hero */
+    align-items: center;  
+    grid-area: header;
+    background: #4CAF50;
+    color: white;
+    text-align: center;
+}
+
+header .top-bar {
+    grid-area: top-bar;
+    display: grid;
+    align-items: center;
+    grid-template-areas: 
+        "search top-actions";
+    grid-template-columns: 2fr 1fr; /* two columns */
+    padding: 0 20px;
+    
+}
+
+header .top-bar .search .search-input{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#header-search{
+    width: 400px;
+    align-items: center;
+    border: none;
+}
+
+header .top-bar .top-actions {
+    /* grid-area: top-actions; */
+    width: 120px;
+    display: grid;
+    grid-template-areas: "icon-btn user-btn";
+    align-items: center;
+    justify-self: end;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+header .top-bar .top-actions .user-btn {
+    grid-area: user-btn;
+    display: grid;
+    grid-template-areas: "avatar user-name";
+    align-items: center;
+    gap: 10px;
+}
+
+header .top-bar .top-actions .icon-btn {
+    grid-area: icon-btn;
+    display: grid;
+    grid-template-areas: "avatar user-name";
+    align-items: center;
+    gap: 10px;
+}
+
+
+header .hero {
+    grid-area: hero;
+    display: grid;
+    grid-template-areas: 
+        "greeting primary-actions";
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .hero .greeting {
+    grid-area: greeting;
+    display: grid;
+    grid-template-areas: "avatar-large greeting-text";
+    align-items: center;
+    justify-content: left;
+}
+
+header .hero .primary-actions {
+    grid-area: primary-actions;
+    display: flex;              
+    justify-content: end;
+    gap: 20px;
+}
+
+header .hero .primary-actions .action-btn {
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: smaller;
+    background-color: lightblue;
+    width: 80px;       /* fixed width */
+    height: 32px;      /* fixed height */
+    overflow: hidden;  /* hides text that doesn’t fit */
+    text-overflow: ellipsis; /* optional: adds "…" if text is clipped */
+}
+
+aside nav .item {
+    font-size: 40px;       /* increase text size */
+    /* height: 100px;      set a fixed height for each item */
+    text-decoration: none; /* remove underline */
+    color: inherit;        /* keep current text color or inherit from parent */
+    /* margin: 200px 0px;        add vertical margin */
+    /* padding: 10px;       add padding */
+}
+
+nav .item span {
+    font-size: 18px;       /* also increase size of the <span> text */
+    padding: 10px;
+    margin-top: 20px;
+    /* height: 500px;      match the height of the parent .item */
+}
+
+aside {
+    grid-area: sidebar;
+    background: lightblue;
+    padding: 10px;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+main {
+    grid-area: body;
+    padding: 20px;
+}
+
+* {
+  border-radius: 10px;   /* adjust the px value for more or less roundness */
+}
+
+.dashboard {
+    display: grid;
+    grid-template-areas: 
+        "books announcements-trending";
+    grid-template-columns: 2fr 1fr;
+    /* height: auto; */
+}
+
+.dashboard .book {
+    grid-area: books;
+}
+
+.dashboard .books .book-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    grid-template-rows: repeat(3, auto);   /* 3 rows, height adjusts to content */
+    gap: 10px;                             /* optional: space between cells */
+}
+
+.dashboard .books .book-list .book-card{
+    border: 1px solid rgba(0,0,0,0.12);
+    background: #ffffff;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.dashboard .announcements-trending {
+    grid-area: announcements-trending;
+    display: grid;
+    grid-template-areas: 
+        "announcements"
+        "trending";
+}
+
+.dashboard .announcements-trending .announcements {
+    grid-area: announcements;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto); /* 3 rows sized to content */
+    /* gap: 10px; space between announcement items */
+    padding: 0 8px;
+}
+
+.dashboard .announcements-trending .announcements .announcement-item {
+    border: 1px solid rgba(0,0,0,0.12);
+    background: #ffffff;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    min-height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 10px 0; /* space between announcement items */
+}
+
+.dashboard .announcements-trending .trending {
+    grid-area: trending;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px; /* space between trending items */
+    padding: 0 8px;
+}
+
+.trending-item {
+    border: 1px solid rgba(0,0,0,0.12);
+    background: #ffffff;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    min-height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.book-actions button{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.icon-btn,
+.user-btn  {
+  display: inline-flex;       /* keep content inline and flexible */
+  align-items: center;        /* center vertically */
+  justify-content: center;    /* center horizontally */
+  padding: 0;                 /* remove default button padding */
+  margin: 0;
+  border: none;               /* optional: remove border */
+  background: none;           /* optional: transparent background */
+  width: 32px;                /* match the icon size */
+  height: 32px;               /* match the icon size */
+  cursor: pointer;
+}
+
+#NewBookButton {
+    background-color: #4CAF50; /* green background */
+    color: white;              /* white text */
+    border: none;              /* remove default border */
+    padding: 10px 20px;        /* spacing inside button */
+    font-size: 16px;           /* text size */
+    cursor: pointer;           /* pointer cursor on hover */
+    border-radius: 5px;        /* rounded corners */
+}
+
+.icon {
+  font-size: 20px;            /* adjust icon size */
+}
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
