@@ -261,6 +261,62 @@ main {
   cursor: pointer;
 }
 
+/* Style the form container */
+#formContainer {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;   /* light background */
+  border: 1px solid #ddd;      /* subtle border */
+  border-radius: 8px;          /* rounded corners */
+  max-width: 400px;            /* limit width */
+  font-family: Arial, sans-serif;
+}
+
+/* Style the form itself */
+#formContainer form {
+  display: flex;
+  flex-direction: column;      /* stack elements vertically */
+  gap: 12px;                   /* spacing between fields */
+}
+
+/* Labels */
+#formContainer label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+/* Inputs */
+#formContainer input[type="text"],
+#formContainer input[type="number"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Checkbox aligned nicely */
+#formContainer input[type="checkbox"] {
+  margin-left: 8px;
+}
+
+/* Submit button */
+#formContainer button {
+  background-color: #4CAF50;   /* green background */
+  color: white;                /* white text */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+#formContainer button:hover {
+  background-color: #45a049;   /* darker green */
+}
+
 #NewBookButton {
     background-color: #4CAF50; /* green background */
     color: white;              /* white text */
